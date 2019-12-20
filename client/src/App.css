@@ -1,0 +1,21 @@
+.lialign{
+    display: inline;
+    padding-right: 30px;
+}
+.formContainer {
+    border:none;
+    border-radius: 10px;
+}
+.formPosition {
+    margin-top:10%
+}
+.signup{
+    margin-bottom: 10px;
+}
+.formPositionSignUp{
+    margin-top: 7%;
+}
+.contactImagePosition {
+    position: relative;
+    left:90px;
+}

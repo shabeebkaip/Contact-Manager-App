@@ -13,8 +13,6 @@ module.exports.list = (req, res) => {
 
 module.exports.create = (req, res) => {
     const  body  = _.pick(req.body,['name','email','password'] )
-    // body=Object.assign(body,{user:req.user._id})
-    // const contact = new Contact({...body,...{user:req.usr._id}})
     const contact = new Contact(body)
     contact.admin=req.admin._id
     contact.save()

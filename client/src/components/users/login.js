@@ -1,5 +1,4 @@
 import React from 'react'
-// import axios from '../../config/axios'
 import {connect} from 'react-redux'
 import { startSetUserLogin } from '../../actions/user'
 import {Link} from'react-router-dom'
@@ -24,17 +23,6 @@ class Login extends React.Component{
             password:this.state.password
         }
         console.log('formdata',formData)
-        // axios.post('/users/login',formData)
-        //     .then(response=>{
-        //         if(response.data.hasOwnProperty('errors')){
-        //             alert(response.data.message)
-        //         }else{
-        //             const token=response.data.token
-        //             localStorage.setItem('authToken',token)
-        //             this.props.history.push('/')
-        //             window.location.reload()
-        //         }
-        //     })
         
         this.props.dispatch(startSetUserLogin(formData,this.props))
 

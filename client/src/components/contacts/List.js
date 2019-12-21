@@ -15,15 +15,6 @@ import { startGettingAllContacts} from '../../actions/contacts'
     }
 
     componentDidMount(){
-        // axios.get('/contacts',{
-        //     headers:{
-        //         'x-auth':localStorage.getItem('authToken')
-        //     }
-        // })
-        // .then(response=>{
-        //     const contacts=response.data
-        //     this.setState({contacts,copy:contacts})
-        // })
         this.props.dispatch(startGettingAllContacts())
 
     }
@@ -47,13 +38,7 @@ import { startGettingAllContacts} from '../../actions/contacts'
                 <input type='text' value={this.state.text} onChange={this.handleChange} className="form"/> <button onClick={this.handleSearch} className="btn btn-primary">Search</button>
                 </div>
                 <hr/>
-                {/* <ul>
-                    {
-                        this.props.contacts.map(contact=>{
-                            return <li key={contact._id}>{contact.name}<button><Link to={`/contacts/${contact._id}`}>Show</Link></button></li>
-                        })
-                    }
-                </ul> */}
+            
                 <table className="table table-striped">
                 <thead>
                         <tr >

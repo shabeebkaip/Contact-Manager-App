@@ -1,8 +1,6 @@
 import React from 'react'
 import axios from '../../config/axios'
 import Form from './Form'
-import { startEditContact, gettingContact } from '../../actions/contacts'
-import {connect} from 'react-redux'
 
  class EditContact extends React.Component{
     constructor(props){
@@ -45,7 +43,7 @@ import {connect} from 'react-redux'
             alert(err)
 
         })
-        // this.props.dispatch(startEditContact(formData,this.props))
+       
 
     }
    
@@ -61,10 +59,4 @@ import {connect} from 'react-redux'
         )
     }
 }
-const mapStateToProps = (state)=>{
-    return {
-        contact:state.contact
-    }
-}
-
-export default connect(mapStateToProps)(EditContact)
+export default EditContact

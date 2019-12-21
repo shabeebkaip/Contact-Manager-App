@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from '../../config/axios'
 import {Link } from 'react-router-dom'
-// import {connect} from 'react-redux'
 import img from '../../images/58637085-cartoon-avatar-man-with-brown-hair-wearing-eyeglasses-front-view-over-isolated-background-vector-ill.jpg'
 
 
@@ -22,7 +21,7 @@ class ShowContact extends React.Component{
             }
         })
         .then(response=>{
-            // console.log(response.data)
+            
             const contact=response.data
             this.setState({contact})
         })
@@ -57,14 +56,6 @@ class ShowContact extends React.Component{
     render(){
         console.log(this.props.match.params.id)
         return (
-            // <div>
-            //     <h2>Show Contact Info</h2>
-            //     <p>{this.state.contact.name}-{this.state.contact.mobile}:{this.state.contact.category}</p>
-            //     <br/>
-            //     <button><Link to={`/contacts/edit/${this.props.match.params.id}`}>Edit</Link></button>
-            //     <button onClick={this.handleRemove}>remove</button>
-            //     <button onClick={this.backHandle}>back</button>
-            // </div>
             <div className="col-md-6 offset-md-3 contactContainer shadow rounded mt-3">
             <div className="row">
                 <div className="col-md-6 offset-md-3 mt-5">
@@ -101,11 +92,4 @@ class ShowContact extends React.Component{
         )
     }
 }
-// const mapStateToProps = (state)=>{
-//     return {
-//         contact : state.contact
-//     }
-// }
-
-// export default connect(mapStateToProps)(ShowContact)
 export default ShowContact

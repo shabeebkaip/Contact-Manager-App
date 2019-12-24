@@ -2,7 +2,7 @@ import React from 'react'
 //  import axios from '../../config/axios'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import { startSetUserRegister } from '../../actions/user'
+import { startUserRegister } from '../../actions/user'
 
 class Register extends React.Component{
     constructor(props){
@@ -26,7 +26,7 @@ class Register extends React.Component{
             password:this.state.password
         }
         console.log('formData',formData)
-        this.props.dispatch(startSetUserRegister(formData,this.props))
+        this.props.dispatch(startUserRegister(formData,this.props))
     }
 
     render(){

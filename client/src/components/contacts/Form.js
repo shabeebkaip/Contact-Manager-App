@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../images/58637085-cartoon-avatar-man-with-brown-hair-wearing-eyeglasses-front-view-over-isolated-background-vector-ill.jpg'
+import img from '../../images/default.png'
 
 export default class Form extends React.Component{
     constructor(props){
@@ -8,7 +8,8 @@ export default class Form extends React.Component{
             name:props.contact ? props.contact.name:'',
             email:props.contact ? props.contact.email:'',
             mobile:props.contact ? props.contact.mobile:'',
-            category:props.contact ? props.contact.category:''
+            category:props.contact ? props.contact.category:'',
+            gender:props.contact ? props.contact.gender:''
         }
     }
 
@@ -23,6 +24,7 @@ export default class Form extends React.Component{
             email:this.state.email,
             mobile:this.state.mobile,
             category:this.state.category,
+            gender:this.state.gender
         }
         // console.log(formData)
         this.props.handleSubmit(formData)
@@ -56,6 +58,11 @@ export default class Form extends React.Component{
                     <label htmlFor="category">Category</label> &nbsp;
                     <input type="radio" value="home" name="category" onChange={this.handleChange} /> Home  &nbsp;
                     <input type="radio" value="work" name="category" onChange={this.handleChange} /> Work
+                </div>
+                <div className="mt-3">
+                    <label htmlFor="gender">gender</label> &nbsp;
+                    <input type="radio" value="male" name="gender" onChange={this.handleChange} /> male  &nbsp;
+                    <input type="radio" value="female" name="gender" onChange={this.handleChange} /> female
                 </div>
                 <div className="mt-3 mb-5">
                     <input type="submit" value="Add" className="btn btn-success" />

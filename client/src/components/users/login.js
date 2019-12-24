@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { startSetUserLogin } from '../../actions/user'
+import { startUserLogin } from '../../actions/user'
 import {Link} from'react-router-dom'
 
 class Login extends React.Component{
@@ -24,7 +24,7 @@ class Login extends React.Component{
         }
         console.log('formdata',formData)
         
-        this.props.dispatch(startSetUserLogin(formData,this.props))
+        this.props.dispatch(startUserLogin(formData,this.props))
 
     }
 

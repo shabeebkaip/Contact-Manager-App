@@ -38,6 +38,11 @@ const contactSchema = new Schema({
         required: true, 
         enum: ['work', 'home']
     },
+    gender:{
+        type: String,
+        required: true,
+        enum:['male', 'female']
+    },
     user:{
         type:Schema.Types.ObjectId,
         ref:'User',

@@ -7,6 +7,8 @@ module.exports.register=(req,res)=>{
     const user=new User(body)
     user.save()
     .then(user=>{
+        // const { _id,username,email}=user
+        // res.json({_id,username,email})
         res.json(_.pick(user,["_id","username","email"]))
     })
     .catch(err=>{
@@ -20,10 +22,11 @@ module.exports.login=(req,res)=>{
 
     User.findByCredentials(body.email,body.password)
         .then(user=>{
-        
+            // res.json(user)
             return user.generateToken()
         })
         .then((token)=>{
+            // res.setHeader('x-auth',token).send({})
             res.send({'token':token})
         })
         .catch(err=>{
@@ -31,10 +34,13 @@ module.exports.login=(req,res)=>{
         })
 }
 
+
 //localhost:3011/users/account
 module.exports.account=function(req,res){
-      const user=req.user
-      res.json(_.pick(user,["_id","username","email"]))
+    const user=req.user
+  //   const { _id,username,email}=user
+  //   res.json({_id,username,email})
+    res.json(_.pick(user,["_id","username","email"]))
 
 }
 

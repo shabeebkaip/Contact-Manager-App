@@ -2,6 +2,7 @@ import React from 'react'
 import axios from '../../config/axios'
 import {Link } from 'react-router-dom'
 import img from '../../images/58637085-cartoon-avatar-man-with-brown-hair-wearing-eyeglasses-front-view-over-isolated-background-vector-ill.jpg'
+import image1 from '../../images/images.png'
 
 
 
@@ -59,7 +60,7 @@ class ShowContact extends React.Component{
             <div className="col-md-6 offset-md-3 contactContainer shadow rounded mt-3">
             <div className="row">
                 <div className="col-md-6 offset-md-3 mt-5">
-                <img src={img} alt="contact-image" width="150" height="150" className="rounded-circle  contactImagePosition" />
+                <img src={this.state.contact.gender=='male' ? img : image1} alt="contact-image" width="150" height="150" className="rounded-circle  contactImagePosition" />
                 </div>
                 </div>
                 <hr/>

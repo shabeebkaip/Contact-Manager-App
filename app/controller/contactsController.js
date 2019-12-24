@@ -2,7 +2,7 @@ const Contact = require('../models/contact')
 const _=require('lodash')
 
 module.exports.list = (req, res) => {
-    Contact.find({admin:req.admin._id})
+    Contact.find({user:req.user._id})
         .then((contacts) => {
             res.json(contacts)
         })
@@ -12,9 +12,11 @@ module.exports.list = (req, res) => {
 }
 
 module.exports.create = (req, res) => {
-    const  body  = _.pick(req.body,['name','email','password'] )
+    const  body  = _.pick(req.body,['name','email','mobile','category', 'gender'] )
+    // body=Object.assign(body,{user:req.user._id})
+    // const contact = new Contact({...body,...{user:req.usr._id}})
     const contact = new Contact(body)
-    contact.admin=req.admin._id
+    contact.user=req.user._id
     contact.save()
         .then((contact) => {
             res.json(contact)

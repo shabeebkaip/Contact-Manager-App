@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^13.3.0", 
+    "npm": "^6.13.1" 
+},
   "scripts": {
     "start": "node index.js",
     "dev-server": "nodemon index.js",
     "app": "concurrently \"nodemon index.js\" \"cd client && npm start\"",
+    "heroku-prebuild": "npm install",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
